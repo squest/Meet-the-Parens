@@ -14,11 +14,12 @@
   (let [old-data (cl/get-document cdb id-ref)
         last-id ((keyword ctype) old-data)
         new-id (if-let [id last-id]
-                 (inc last-id)
+                 (inc id)
                  1)]
-    (do (cl/put-document (merge old-data
+    (do (cl/put-document cdb
+                         (merge old-data
                                 {(keyword ctype) new-id}))
-        last-id)))
+        new-id)))
 
 
 
