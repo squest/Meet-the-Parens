@@ -16,7 +16,8 @@
                   [selmer "0.6.9"]
                   [lib-noir "0.8.5"]
                   [com.cemerick/url "0.1.1"]
-                  [com.ashafa/clutch "0.4.0-RC1"]]
+                  [com.ashafa/clutch "0.4.0-RC1"]
+                  [enlive "1.1.5"]]
   :cljsbuild  {:builds
                [{:source-paths ["src-cljs"],
                  :compiler
@@ -53,7 +54,7 @@
   :url
   "http://example.com/FIXME"
   :main
-    zencoding.core
+  zencoding.core
   :jvm-opts
   ["-server"]
   :plugins
