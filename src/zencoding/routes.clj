@@ -7,3 +7,7 @@
            (GET "/" req
                 "Happy hacking brothers!!")))
 
+(def courses
+  (context "/course" req
+           (GET "/" req
+                nil)))
