@@ -6,6 +6,9 @@
   "The data for db configuration, coming from an edn file"
   (read-string (slurp "resources/config.edn")))
 
+;; ctypes : "_test" "track" "course" "content" "user" "admin"
+;; "problem" "answer" "_id"
+
 (defn configure
   "Returns the complete url with username and password to access the
   database"
@@ -33,3 +36,5 @@
   (cl/put-document cdb
                    (merge {:ctype "_test"}
                           data)))
+
+

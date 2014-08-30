@@ -1,6 +1,6 @@
 (ns zencoding.handler
   (:require [compojure.core :refer [defroutes]]
-            [zencoding.routes.home :refer [home-routes]]
+            [zencoding.routes :as routes]
             [zencoding.middleware :refer [load-middleware]]
             [zencoding.session-manager :as session-manager]
             [noir.response :refer [redirect]]
@@ -49,7 +49,7 @@
 
 (def app (app-handler
            ;; add your application routes here
-           [home-routes base-routes]
+           [routes/home base-routes]
            ;; add custom middleware here
            :middleware (load-middleware)
            ;; timeout sessions after 30 minutes
