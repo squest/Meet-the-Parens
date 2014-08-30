@@ -3,21 +3,22 @@
   :repl-options  {:init-ns zencoding.repl}
   :dependencies  [[ring-server "0.3.1"]
                   [noir-exception "0.2.2"]
-                  [org.clojure/clojurescript "0.0-2280"]
-                  [environ "0.5.0"]
+                  [org.clojure/clojurescript "0.0-2322"]
+                  [environ "1.0.0"]
                   [com.taoensso/timbre "3.2.1"]
                   [markdown-clj "0.9.47"]
-                  [im.chit/cronj "1.0.1"]
+                  [im.chit/cronj "1.4.0"]
                   [org.clojure/clojure "1.6.0"]
-                  [com.taoensso/tower "2.0.2"]
-                  [http-kit "2.1.18"]
+                  [com.taoensso/tower "3.0.0"]
+                  [http-kit "2.1.19"]
                   [cljs-ajax "0.2.6"]
                   [secretary "1.2.0"]
                   [selmer "0.6.9"]
-                  [lib-noir "0.8.5"]
+                  [lib-noir "0.8.6"]
                   [com.cemerick/url "0.1.1"]
                   [com.ashafa/clutch "0.4.0-RC1"]
-                  [enlive "1.1.5"]]
+                  [enlive "1.1.5"]
+                  [expectations "2.0.9"]]
   :cljsbuild  {:builds
                [{:source-paths ["src-cljs"],
                  :compiler
@@ -45,7 +46,7 @@
              :dev
              {:dependencies
               [[ring-mock "0.1.5"]
-               [ring/ring-devel "1.3.0"]
+               [ring/ring-devel "1.3.1"]
                [pjstadig/humane-test-output "0.6.0"]],
               :injections
               [(require 'pjstadig.humane-test-output)
