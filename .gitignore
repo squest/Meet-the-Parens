@@ -11,3 +11,4 @@ pom.xml
 config.edn
 /.idea
 .nrepl-port
+/resources/.idea
