@@ -28,7 +28,7 @@
 
 (def cdb
   "The actual db used throughout the application"
-  (configure :online))
+  (configure :local))
 
 (defn test-input
   "Some test to see if the setup is working"

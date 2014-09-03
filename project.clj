@@ -1,23 +1,34 @@
 (defproject
   zencoding "0.1.0"
   :repl-options  {:init-ns zencoding.repl}
-  :dependencies  [[ring-server "0.3.1"]
-                  [noir-exception "0.2.2"]
-                  [org.clojure/clojurescript "0.0-2280"]
-                  [environ "0.5.0"]
+  :dependencies  [[org.clojure/clojure "1.6.0"]
+                  [org.clojure/clojurescript "0.0-2311"]
+                  [ring-server "0.3.1"]
                   [com.taoensso/timbre "3.2.1"]
-                  [markdown-clj "0.9.47"]
-                  [im.chit/cronj "1.0.1"]
-                  [org.clojure/clojure "1.6.0"]
                   [com.taoensso/tower "2.0.2"]
                   [http-kit "2.1.18"]
+                  [clj-time "0.8.0"]
+                  [enfocus "2.1.0"]
+                  [reagent "0.4.2"]
+                  [ring-cors "0.1.4"]
+                  [lib-noir "0.8.4"]
+                  [couchbase-clj "0.2.0"]
+                  [com.ashafa/clutch "0.4.0-RC1"]
+                  [cheshire "5.3.1"]
+                  [com.cemerick/url "0.1.1"]
+                  [tentacles "0.2.7"]
+                  [kioo "0.4.0"]
+                  [rm-hull/monet "0.1.12"]
+                  [me.raynes/fs "1.4.6"]
+                  [enlive "1.1.5"]
+                  [noir-exception "0.2.2"]
+                  [environ "1.0.0"]
+                  [im.chit/cronj "1.0.1"]
                   [cljs-ajax "0.2.6"]
                   [secretary "1.2.0"]
-                  [selmer "0.6.9"]
-                  [lib-noir "0.8.5"]
-                  [com.cemerick/url "0.1.1"]
-                  [com.ashafa/clutch "0.4.0-RC1"]
-                  [enlive "1.1.5"]]
+                  [markdown-clj "0.9.47"]
+                  [expectations "2.0.9"]]
+  
   :cljsbuild  {:builds
                [{:source-paths ["src-cljs"],
                  :compiler
@@ -45,7 +56,7 @@
              :dev
              {:dependencies
               [[ring-mock "0.1.5"]
-               [ring/ring-devel "1.3.0"]
+               [ring/ring-devel "1.3.1"]
                [pjstadig/humane-test-output "0.6.0"]],
               :injections
               [(require 'pjstadig.humane-test-output)
@@ -54,7 +65,7 @@
   :url
   "http://example.com/FIXME"
   :main
-    zencoding.core
+  zencoding.core
   :jvm-opts
   ["-server"]
   :plugins
