@@ -5,7 +5,7 @@
             [compojure.response :refer [Renderable]]
             [environ.core :refer [env]]))
 
-(def template-path "templates/")
+(def template-path "selmer/")
 
 (deftype RenderableTemplate [template params]
   Renderable

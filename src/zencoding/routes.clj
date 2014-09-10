@@ -1,14 +1,6 @@
 (ns zencoding.routes
   (:require [compojure.core :refer :all]
-            [noir.response :as resp]
-            [zencoding.home.pages :as hp]))
+            [noir.response :as resp]))
 
-(def home
-  (context "/" req
-           (GET "/" req
-                (hp/homepage))))
-
-(def courses
-  (context "/course" req
-           (GET "/" req
-                nil)))
+(defroutes home
+					 (GET "/" [] "Nothing here to see for now!!"))

@@ -10,7 +10,36 @@
             [taoensso.timbre.appenders.rotor :as rotor]
             [selmer.parser :as parser]
             [environ.core :refer [env]]
-            [cronj.core :as cronj]))
+            [cronj.core :as cronj]
+						[cemerick.url :as curl]
+						[questdb.core :as qdb]
+						[com.stuartsierra.component :as com]))
+
+(defrecord ZenCoding [fname whichcouch whichquest]
+	com/Lifecycle
+
+	(start [this]
+		(let [conf (read-string (slurp "config.edn"))
+					couch-config (get conf whichcouch)
+					couch (assoc (curl/url (:url couch-config) (:dbname couch-config))
+									:username (:username couch-config)
+									:password (:password couch-config))
+					quest (get conf whichquest)]
+			(do (if (qdb/db-exists? quest)
+						nil
+						(qdb/create! quest))
+					(assoc this :cdb couch
+											:qdb quest
+											:git (:git conf)))))
+
+	(stop [this]))
+
+(defn make-app [fname whichcouch whichquest]
+	(->ZenCoding fname whichcouch whichquest))
+
+(def zencoding-app (make-app "config.edn"
+																:local-couch
+																:qdb-dev))
 
 (defroutes base-routes
   (route/resources "/")
@@ -29,6 +58,8 @@
      :async? false ; should be always false for rotor
      :max-message-per-msecs nil
      :fn rotor/appender-fn})
+
+	(com/start zencoding-app)
 
   (timbre/set-config!
     [:shared-appender-config :rotor]
