@@ -12,3 +12,4 @@ config.edn
 /.idea
 .nrepl-port
 /resources/.idea
+*.edn
