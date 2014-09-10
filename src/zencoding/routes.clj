@@ -3,4 +3,4 @@
             [noir.response :as resp]))
 
 (defroutes home
-					 (GET "/" [] "Nothing here to see for now!!"))
+  (GET "/" [] "Nothing here to see for now!!"))
