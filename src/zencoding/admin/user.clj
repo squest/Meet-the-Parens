@@ -21,6 +21,7 @@
                       :value)))
 
 (defn- log-user-login
+  "Log user-logins into questdb"
   [username]
   (qc/put-doc! (:qdb db)
                {:username username
