@@ -26,7 +26,8 @@
                  [secretary "1.2.1"]
                  [markdown-clj "0.9.47"]
                  [expectations "2.0.9"]
-                 [com.stuartsierra/component "0.2.2"]]
+                 [com.stuartsierra/component "0.2.2"]
+                 [net.cgrand/moustache "1.1.0"]]
 
   :cljsbuild  {:builds
                [{:source-paths ["src-cljs"],
