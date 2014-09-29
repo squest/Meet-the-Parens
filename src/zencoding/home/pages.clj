@@ -3,7 +3,7 @@
             [net.cgrand.reload :refer [auto-reload]]
             [zencoding.util :refer [md->html]]
             [zencoding.util :as util])
-  (:use [net.cgrand.moustache :only [app]]
+  (:use
         [zencoding.util :only [run-server render-to-response]]))
 
 

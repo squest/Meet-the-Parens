@@ -9,9 +9,9 @@
  )
 
 (defroutes login
-           (GET "/" [] (util/render-request page/index))
+           (GET "/login" [] (util/render-request page/index))
            )
 
 (defroutes course
-           (GET "/" [] (util/render-request page/index))
+           (GET "/course" [] (util/render-request page/index))
            )

@@ -1,4 +1,4 @@
-(ns zencoding.util
+(ns zencoding.utils.rendering
   (:require [noir.io :as io]
             [markdown.core :as md]
             [clj-time.local :as t]
@@ -9,16 +9,6 @@
         [ring.middleware.reload :only [wrap-reload]]
         [ring.middleware.file :only [wrap-file]]
         [ring.middleware.stacktrace :only [wrap-stacktrace]]))
-
-(defn md->html
-  "reads a markdown file from public/md and returns an HTML string"
-  [filename]
-  (md/md-to-html-string (slurp (str "resources/" filename))))
-
-(defn now
-  "Returns the string of current date"
-  []
-  (subs (str (t/local-now)) 0 10))
 
 
 (def ^:dynamic *webdir* (str (.getCanonicalFile (jio/file ".")) "/src/zencoding/pages"))
@@ -77,5 +67,3 @@
   (if (= n 1)
     (str astr)
     (str astr "s")))
-
-
