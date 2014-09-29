@@ -3,8 +3,8 @@
             (cemerick.friend [workflows :as workflows]
                              [credentials :as creds])))
 (def users {"admin" {:username "administrator"
-                    :password (creds/hash-bcrypt "administrator")
-                    :roles #{::admin}}
-            })
+                     :password (creds/hash-bcrypt "administrator")
+                     :roles #{::admin}}})
+
 
 

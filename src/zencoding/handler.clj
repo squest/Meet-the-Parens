@@ -13,11 +13,10 @@
             [cronj.core :as cronj]
             [cemerick.url :as curl]
             [questdb.core :as qdb]
-            [com.stuartsierra.component :as com]))
+            [com.stuartsierra.component :as component]))
 
 (defrecord ZenCoding [fname whichcouch whichquest]
-  com/Lifecycle
-
+  component/Lifecycle
   (start [this]
     (let [conf (read-string (slurp "config.edn"))
           couch-config (get conf whichcouch)
@@ -59,7 +58,7 @@
     :max-message-per-msecs nil
     :fn rotor/appender-fn})
 
-  (com/start zencoding-app)
+  (component/start zencoding-app)
 
   (timbre/set-config!
    [:shared-appender-config :rotor]
