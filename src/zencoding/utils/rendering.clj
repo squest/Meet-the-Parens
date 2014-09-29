@@ -3,7 +3,6 @@
             [markdown.core :as md]
             [clj-time.local :as t]))
 
-<<<<<<< HEAD:src/zencoding/util.clj
 (defn md->html
   "reads a markdown file from public/md and returns an HTML string"
   [filename]
@@ -14,15 +13,6 @@
   []
   (subs (str (t/local-now)) 0 10))
 
- 
-=======
->>>>>>> FETCH_HEAD:src/zencoding/utils/rendering.clj
-
-
-<<<<<<< HEAD:src/zencoding/util.clj
-
-
-=======
 (defn render [t]
   (apply str t))
 
@@ -77,4 +67,4 @@
   (if (= n 1)
     (str astr)
     (str astr "s")))
->>>>>>> FETCH_HEAD:src/zencoding/utils/rendering.clj
+

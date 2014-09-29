@@ -135,5 +135,4 @@
           (recur (do (attach-file cdb
                                   (get-notes-id cdb zenid)
                                   (first filepath))
-                     (rest filepath)))))))
-)
+                     (rest filepath))))))))

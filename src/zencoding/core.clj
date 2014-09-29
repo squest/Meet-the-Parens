@@ -5,13 +5,12 @@
             [taoensso.timbre :as timbre]
             [com.ashafa.clutch :as cl]
             [questdb.core :as qdb]
-            [com.stuartsierra.component :as com]
+            [com.stuartsierra.component :as component]
             [cemerick.url :as curl])
   (:gen-class))
 
 (defrecord ZenCoding [fname whichcouch whichquest]
-  com/Lifecycle
-
+  component/Lifecycle
   (start [this]
     (let [conf (read-string (slurp "config.edn"))
           couch-config (get conf whichcouch)
