@@ -3,8 +3,14 @@
             [noir.response :as resp]
             [zencoding.home.pages :as page]))
 
-
 (defroutes home
-  (context "/home" req
-           (GET "/" req "Do nothing here!")))
+  (context "/" req
+           (GET "/" req "Do nothing here!")
+           (GET "/dothis" "blah!!!")))
+
+(defroutes courses
+  (context "/courses" req
+           (GET "/aopa" req "whatever")
+           (GET "/this" req "thdoasda")))
+
 
