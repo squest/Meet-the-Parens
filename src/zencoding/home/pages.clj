@@ -1,41 +1,49 @@
 (ns zencoding.home.pages
-  (:require [net.cgrand.enlive-html :as el]
+  (:require [net.cgrand.enlive-html :refer :all]
             [net.cgrand.reload :refer [auto-reload]]
             [zencoding.util :refer [md->html]]
             [zencoding.util :as util])
   (:use
         [zencoding.util :only [run-server render-to-response]]))
 
+;;TODO using expectation in every namespace, using lein autoexpect in terminal
 
-(el/deftemplate base "../resources/pages/index.html"
-  ;; path to html file
-  [{:keys [title nav content footer]}]
-  [:#title]  (util/maybe-content title)
-  [:#nav] (util/maybe-substitute nav)
-  [:#content] (util/maybe-substitute content)
-  [:#footer] (util/maybe-substitute footer))
+;;just rendering, no database access
+;;functionalities provided by core
 
-(el/defsnippet login "../resources/pages/login.html"
-  [:div#content]
-  [{:keys [header form ]}]
-  [:div#header] (util/maybe-substitute header)
-  [:div#form] (util/maybe-substitute form))
+(def dir "../resources/pages/")
 
-(el/defsnippet course "../resources/pages/courses.html"
-  [:div#content]
-  [{:keys [header contents ]}]
-  [:div#header] (util/maybe-substitute header)
-  [:div#contents] (util/maybe-substitute contents))
+(declare page-list ct-home ct-courses ct-login)
 
-(defn index
-  ([] (base {}))
-  ([ctxt] (base ctxt)))
+(deftemplate tmp-home (str dir "index.html")
+             [whichpage]
+             [:#title]  (content "Zenius Coding")
+             [:#content] (content (get page-list whichpage)))
 
-(defn viewlogin []
-  (base {:title "login"
-         :content (login {})}))
+(def page-list
+  {:home (ct-home)
+   :courses (ct-courses)
+   :login (ct-login)})
 
-(defn viewcourse []
-  (base {:title "Playground"
-         :content (course {})}))
+
+
+;;Detail implementation
+;;TODO masukin :keys dalam snippet
+(defn- ct-courses
+  []
+  (defsnippet course (str dir "courses.html") ))
+
+
+(defn- ct-home
+  []
+  (defsnippet home (str dir "home.html") ))
+
+
+(defn- ct-login
+  []
+  ((defsnippet login (str dir "login.html") )))
+
+
+
+
 
