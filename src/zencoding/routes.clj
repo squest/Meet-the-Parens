@@ -9,6 +9,12 @@
   (context "/home" req
            (GET "/" (page/tmp-home :home))
            (GET "/login" (page/tmp-home :login)))
-  (context "/course" req
-           (GET "/" (page/tmp-home :courses))))
+  (context "/" req
+           (GET "/" req "Do nothing here!")
+           (GET "/dothis" "blah!!!")))
+
+(defroutes courses
+           (context "/courses" req
+                    (GET "/aopa" req "whatever")
+                    (GET "/this" req "thdoasda")))
 
