@@ -22,4 +22,27 @@
                       [:li {:class "has-flyout"}
                        [:a {:href "index.html"} "Home"]]
                       [:li {:class "has-flyout"}
-                       [:a {:href ""} "Example Pages"]]]]])
+                       [:a {:href "#"} "Example Pages"]
+                       [:ul {:class "flyout"}
+                        [:li {:class "has-flyout"}
+                         [:a {:href "blog.html"} "blog"]]
+                        [:li {:class "has-flyout"}
+                         [:a {:href "blog.html"} "blog"]]
+                        [:li {:class "has-flyout"}
+                         [:a {:href "blog.html"} "blog"]]
+                        [:li {:class "has-flyout"}
+                         [:a {:href "blog.html"} "blog"]]]]
+                      [:li {:class ""}
+                       [:a {:href "galleries.html"} "Boxed Gallery"]]
+                      [:li {:class ""}
+                       [:a {:href "galleries.html"} "Boxed Gallery"]]
+                      [:li {:class ""}
+                       [:a {:href "galleries.html"} "Boxed Gallery"]]]]])
+
+(defelem footer []
+         [:div {:class "row"}
+          [:div {:class "twelve colums footer"}
+           [:a {:href ""} "PT Zenius Education"]]])
+
+(defelem home []
+         [:div {:id "header"}])
