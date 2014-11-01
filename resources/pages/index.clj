@@ -82,6 +82,17 @@
              [:p "Lorem ipsum"]]]
            ]])
 
+(defelem login-form []
+         [:div {:class "large-centered large-5 columns"}
+          [:br]
+          (form-to [:put "/backoffice/login-act"]
+                   [:fieldset
+                    [:legend "Login"]
+                    [:div {:class "large-centered large-12 columns"}
+                     (text-field {:placeholder "Username"} "username")
+                     (password-field {:placeholder "Password"} "password")
+                     [:button {:class "small right"} "Login"]]])])
+
 (defhtml home-complete []
          (html5 (head)
                 [:body
@@ -89,4 +100,11 @@
                  (home-header)
                  (home-section-light)
                  (home-section-main)
+                 (footer)]))
+
+(defhtml login []
+         (html5 (head)
+                [:body
+                 (nav)
+                 (login-form)
                  (footer)]))
