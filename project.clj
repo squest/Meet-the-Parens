@@ -29,7 +29,8 @@
                  [com.stuartsierra/component "0.2.2"]
                  [net.cgrand/moustache "1.1.0"]
                  [lein-ancient "0.5.5"]
-                 [ring-basic-authentication "1.0.5"]]
+                 [ring-basic-authentication "1.0.5"]
+                 [hiccup "1.0.5"]]
 
   :cljsbuild  {:builds
                [{:source-paths ["src-cljs"],

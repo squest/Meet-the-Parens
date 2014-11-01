@@ -1,4 +1,4 @@
-(ns pages.index
+(ns zencoding.frontpages.pages
   (:require [hiccup.core :refer :all]
             [hiccup.page :refer [html5 include-js include-css]]
             [hiccup.def :refer :all]
@@ -7,37 +7,37 @@
 
 (defelem head []
          [:head
-            [:title "Front page" ]
-            (include-css "stylesheets/foundation.min.css")
-            (include-css "stylesheets/main.css")
-            (include-css "stylesheets/app.css")
-            (include-css "ligature.css")])
+          [:title "Front page" ]
+          (include-css "stylesheets/foundation.min.css")
+          (include-css "stylesheets/main.css")
+          (include-css "stylesheets/app.css")
+          (include-css "ligature.css")])
 
 (defelem nav []
          [:div {:class "twelve columns header_nav"}
-                {:id "nav"}
-                [:div {:class "row"}
-                 [:ul {:id "menu-header"}
-                      {:class "nav-bar horizontal"}
-                      [:li {:class "has-flyout"}
-                       [:a {:href "index.html"} "Home"]]
-                      [:li {:class "has-flyout"}
-                       [:a {:href "#"} "Example Pages"]
-                       [:ul {:class "flyout"}
-                        [:li {:class "has-flyout"}
-                         [:a {:href "blog.html"} "blog"]]
-                        [:li {:class "has-flyout"}
-                         [:a {:href "blog.html"} "blog"]]
-                        [:li {:class "has-flyout"}
-                         [:a {:href "blog.html"} "blog"]]
-                        [:li {:class "has-flyout"}
-                         [:a {:href "blog.html"} "blog"]]]]
-                      [:li {:class ""}
-                       [:a {:href "galleries.html"} "Boxed Gallery"]]
-                      [:li {:class ""}
-                       [:a {:href "galleries.html"} "Boxed Gallery"]]
-                      [:li {:class ""}
-                       [:a {:href "galleries.html"} "Boxed Gallery"]]]]])
+          {:id "nav"}
+          [:div {:class "row"}
+           [:ul {:id "menu-header"}
+            {:class "nav-bar horizontal"}
+            [:li {:class "has-flyout"}
+             [:a {:href "index.html"} "Home"]]
+            [:li {:class "has-flyout"}
+             [:a {:href "#"} "Example Pages"]
+             [:ul {:class "flyout"}
+              [:li {:class "has-flyout"}
+               [:a {:href "blog.html"} "blog"]]
+              [:li {:class "has-flyout"}
+               [:a {:href "blog.html"} "blog"]]
+              [:li {:class "has-flyout"}
+               [:a {:href "blog.html"} "blog"]]
+              [:li {:class "has-flyout"}
+               [:a {:href "blog.html"} "blog"]]]]
+            [:li {:class ""}
+             [:a {:href "galleries.html"} "Boxed Gallery"]]
+            [:li {:class ""}
+             [:a {:href "galleries.html"} "Boxed Gallery"]]
+            [:li {:class ""}
+             [:a {:href "galleries.html"} "Boxed Gallery"]]]]])
 
 (defelem footer []
          [:div {:class "row"}
@@ -55,7 +55,7 @@
            [:div {:class "four columns"}
             [:h3
              [:span {:class "dropcap_red lsf-icon-dropcap"}
-                    {:title "camera"} "Some Text"]]
+              {:title "camera"} "Some Text"]]
             [:p "lorem ipsum "]]
            [:div {:class "four columns"}
             [:h3

@@ -1,15 +1,18 @@
 (ns zencoding.routes
   (:require [compojure.core :refer :all]
-            [noir.response :as resp]
-            [zencoding.home.pages :as page]))
+            [zencoding.backoffice.pages :as backoffice]
+            [zencoding.frontpages.pages :as homepage]
+            [zencoding.controller.home :as homectrl]
+            [noir.session :as session]
+            [noir.response :as resp]))
 
 ;;Still taken from zencode
 
 (defroutes home
            (GET "/" req
-                (homepage/home ""))
+                (homepage/home-complete ""))
            (GET "/login" req
-                (homepage/userform :login))
+                (homepage/login :login))
            (POST "/login-act" req
                  (let [{:keys [params]} req
                        {:keys [username password]} params]
@@ -22,7 +25,7 @@
                 (do (session/clear!)
                     (resp/redirect "/")))
            (GET "/signup" req
-                (homepage/userform :signup))
+                (homepage/login :signup))
            (POST "/signup-act" req
                  (let [{:keys [params]} req
                        {:keys [username password]} params]
