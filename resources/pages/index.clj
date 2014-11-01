@@ -44,5 +44,49 @@
           [:div {:class "twelve colums footer"}
            [:a {:href ""} "PT Zenius Education"]]])
 
-(defelem home []
-         [:div {:id "header"}])
+(defelem home-header []
+         [:div {:id "header"}
+          [:h1 {:class "heading_supersize"} "Zenius Coding"]
+          [:h2 {:class "welcome_text"} "Some text"]])
+
+(defelem home-section-light []
+         [:section {:class "section_light"}
+          [:div {:class "row"}
+           [:div {:class "four columns"}
+            [:h3
+             [:span {:class "dropcap_red lsf-icon-dropcap"}
+                    {:title "camera"} "Some Text"]]
+            [:p "lorem ipsum "]]
+           [:div {:class "four columns"}
+            [:h3
+             [:span {:class "dropcap_red lsf-icon-dropcap"}
+              {:title "camera"} "Some Text"]]
+            [:p "lorem ipsum "]]
+           [:div {:class "four columns"}
+            [:h3
+             [:span {:class "dropcap_red lsf-icon-dropcap"}
+              {:title "camera"} "Some Text"]]
+            [:p "lorem ipsum "]]]])
+
+(defelem home-section-main []
+         [:section {:class "section_main"}
+          [:h2 "Some text"]
+          [:div {:class "row"}
+           [:article {:class "six columns"}
+            [:div {:class "panel"}
+             [:h3 "lorem ipsum"]
+             [:p "Lorem ipsum"]]]
+           [:article {:class "six columns"}
+            [:div {:class "panel"}
+             [:h3 "lorem ipsum"]
+             [:p "Lorem ipsum"]]]
+           ]])
+
+(defhtml home-complete []
+         (html5 (head)
+                [:body
+                 (nav)
+                 (home-header)
+                 (home-section-light)
+                 (home-section-main)
+                 (footer)]))
