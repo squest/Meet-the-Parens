@@ -2,9 +2,7 @@
   (:require [net.cgrand.enlive-html :refer :all]
             [net.cgrand.reload :refer [auto-reload]]
             [zencoding.util :refer [md->html]]
-            [zencoding.util :as util])
-  (:use
-        [zencoding.util :only [run-server render-to-response]]))
+            [zencoding.util :as util]))
 
 ;;TODO using expectation in every namespace, using lein autoexpect in terminal
 
@@ -12,6 +10,8 @@
 ;;functionalities provided by core
 
 (def dir "../resources/pages/")
+
+
 
 (declare page-list ct-home ct-courses ct-login)
 
